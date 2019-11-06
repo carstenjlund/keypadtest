@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #0f3158;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 0.1em 0;
+        }
+
+        .holder {
+            width: 60%;
+            display: flex;
+            margin: 0 auto 4em;
+            justify-content: center;
+
+        }
+
+        #test {
+            display: none;
+        }
+
+        .circle {
+            width: 1em;
+            height: 1em;
+            border: 1px solid white;
+            margin: 0 0.25em;
+            border-radius: 50%;
+        }
+
+        .filled {
+            background-color: white;
+        }
+
+        .numpad {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            font-size: 1.8em;
+            background-color: transparent;
+            width: 3em;
+            height: 3em;
+            border: 1px solid white;
+            color: white;
+            margin: 0.3em;
+            border-radius: 50%;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .shaker {
+            animation: shake 0.6s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translate3d(-2px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(4px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-8px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(8px, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="holder">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <form action="">
+        <input type="text" name="test" id="test">
+    </form>
+    <div class="numpad">
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button value="0">0</button>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
