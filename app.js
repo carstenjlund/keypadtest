@@ -2,8 +2,6 @@ let thing = document.querySelector('.thing')
 let test = document.querySelector('#test')
 let circles = document.querySelectorAll('.circle')
 const numpad = document.querySelector('.numpad')
-console.log(thing);
-console.log(circles);
 
 var manualInputEvent = new Event('input', {
     bubbles: true,
@@ -12,14 +10,12 @@ var manualInputEvent = new Event('input', {
 
 numpad.addEventListener('click', () => {
     if (event.target !== event.currentTarget) {
-        console.log(event.target.value)
         test.value += event.target.value
         test.dispatchEvent(manualInputEvent);
     }
 })
 
 test.addEventListener('input', () => {
-
     circles.forEach((circle, index) => {
         if (index < test.value.length) {
             circle.classList.add('filled')
@@ -27,7 +23,6 @@ test.addEventListener('input', () => {
     })
 
     if (test.value.length === 4) {
-
         test.setAttribute('disabled', '')
         setTimeout(() => {
             if (window.navigator.vibrate) {
@@ -45,6 +40,4 @@ test.addEventListener('input', () => {
             }, 750)
         }, 450)
     }
-
-
 })
